@@ -9,6 +9,7 @@ public class Volume{
 
 	public Volume(String volLocation){
 		SuperBlock superBlock = new SuperBlock(1);
+		GroupDescriptor groupDescriptor = new GroupDescriptor();
 
 	}
 	
