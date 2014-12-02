@@ -3,15 +3,17 @@ import java.io.IOException;
 
 public class GroupDescriptor extends Ext2File {
 	protected int inodeTablePointer = 0;
-	public GroupDescriptor(){
+	public GroupDescriptor(int byteReference){
 		super();
 		try {
 			
-			fileChannel.read(fileBuffer, 2048);
+			fileChannel.read(fileBuffer, byteReference);
 			//Set the channel to begin reading from 2014 bits
 			
 			
 			inodeTablePointer = fileBuffer.getInt(8);
+			InodeTable mainTable = new InodeTable(inodeTablePointer);
+
 		
 		} catch (IOException e) {
 			System.out.println("Input/Output Exception:");
