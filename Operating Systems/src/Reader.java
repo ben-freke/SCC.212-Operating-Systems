@@ -12,7 +12,7 @@ public class Reader extends Ext2File{
 			for (int i = 0; i<1024; i++)
             	//Loop whilst there's data remaining in the file buffer to read
             {
-                System.out.print(fileBuffer.get(128+i));
+                System.out.print(fileBuffer.get(i));
                 //Convert each item in the fileBuffer to char and print it
             }
             

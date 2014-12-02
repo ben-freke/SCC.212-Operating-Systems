@@ -10,11 +10,13 @@ public class InodeTable extends Ext2File{
 			int tableAddress = ((inodePointer)*1024)+128;
 			try {
 				
-				fileChannel.read(fileBuffer, 86144);
+				fileChannel.read(fileBuffer, tableAddress);
 				
 				System.out.println(fileBuffer.getInt(40));
-      
+				
+				DataBlock temp = new DataBlock(fileBuffer.getInt(40));
 
+				
 				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
