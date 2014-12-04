@@ -2,30 +2,27 @@ import java.io.IOException;
 
 
 public class InodeTable extends Ext2File{
-
-	public InodeTable(int inodePointer){
+	protected int dataPointer = 0;
+	public InodeTable(int inodePointer, int inodeNumber, int pointerNumber){
 		super();
 		
-			System.out.println("");
-			int tableAddress = ((inodePointer)*1024)+128;
+			int tableAddress = ((inodePointer)*1024)+(128*(inodeNumber-1));
 			try {
 				
 				fileChannel.read(fileBuffer, tableAddress);
 				
-				System.out.println(fileBuffer.getInt(40));
-				
-				DataBlock temp = new DataBlock(fileBuffer.getInt(40));
+				dataPointer = (fileBuffer.getInt(40+(pointerNumber*4)));
 
-				
 				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		
-		
-		
-		
+
+	}
+	
+	public int getPointer(){
+		return dataPointer;
 	}
 	
 }

@@ -12,7 +12,6 @@ public class GroupDescriptor extends Ext2File {
 			
 			
 			inodeTablePointer = fileBuffer.getInt(8);
-			InodeTable mainTable = new InodeTable(inodeTablePointer);
 
 		
 		} catch (IOException e) {
