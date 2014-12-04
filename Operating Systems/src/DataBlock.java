@@ -26,7 +26,7 @@ public class DataBlock extends Ext2File{
 	}
 	
 	
-	public void getContents(int inodeSize){
+	public void getFiles(int inodeSize){
 		int nameLength = (int)fileBuffer.get(inodeSize+6);
 		
 		System.out.print((fileBuffer.getInt(inodeSize)) + ": ");
@@ -41,7 +41,8 @@ public class DataBlock extends Ext2File{
 		
 		System.out.println("");
 		
-		if (((fileBuffer.getInt(inodeSize + 8 + nameLength ) != 0))) this.getContents((fileBuffer.getShort(inodeSize + 4))+inodeSize);
+		
+		if (((fileBuffer.getInt(inodeSize + 8 + nameLength ) != 0))) this.getFiles((fileBuffer.getShort(inodeSize + 4))+inodeSize);
 
 		
 		
