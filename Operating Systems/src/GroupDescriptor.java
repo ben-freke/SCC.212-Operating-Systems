@@ -22,6 +22,7 @@ public class GroupDescriptor extends Ext2File {
 			
 			
 			inodeTablePointer = fileBuffer.getInt(8);
+			//Gets the 4 bytes from an offset 8 (where the Inode Pointer is stored).
 
 		
 		} catch (IOException e) {
@@ -30,6 +31,7 @@ public class GroupDescriptor extends Ext2File {
 		}
 		
 		this.fileClose();
+		//Close the file for reading.
 	}
 
 	/** 

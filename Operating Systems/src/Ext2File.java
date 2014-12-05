@@ -3,7 +3,11 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
-
+/**
+ * Loads the Ext2 File System into a File Channel and then a File Buffer
+ * @author benfreke
+ *
+ */
 public class Ext2File{
 	
 	protected int size = 0;
@@ -11,6 +15,9 @@ public class Ext2File{
 	protected FileChannel fileChannel = null;
 	protected RandomAccessFile file = null;
 	
+	/**
+	 * Reads in the Ext2 File from the source folder in the mode "Read"
+	 */
 	public Ext2File(){
 		try {
 			file = new RandomAccessFile("src/ext2fs","r");
@@ -31,6 +38,9 @@ public class Ext2File{
 			
 	}
 
+	/**
+	 * Closes the file to allow other applications to open it
+	 */
 	
 	public void fileClose(){
 		

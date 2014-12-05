@@ -1,12 +1,9 @@
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.channels.FileChannel;
-import java.nio.file.FileSystems;
 
 public class Driver{
 	public static void main(String[] args){
 		
 		SuperBlock superBlock = new SuperBlock(1);
+		superBlock.printContents();
 		GroupDescriptor groupDescriptor = new GroupDescriptor(2048);
 		InodeTable mainTable = new InodeTable(groupDescriptor.getTablePointer(), 2, 0);
 		DataBlock temp = new DataBlock(mainTable.getPointer());
