@@ -29,7 +29,7 @@ public class DataBlock extends Ext2File{
 	public void getFiles(int inodeSize){
 		int nameLength = (int)fileBuffer.get(inodeSize+6);
 		
-		System.out.print((fileBuffer.getInt(inodeSize)) + ": ");
+		//System.out.print((fileBuffer.getInt(inodeSize)) + ": ");
 
 		
 		

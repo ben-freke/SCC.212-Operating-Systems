@@ -1,7 +1,17 @@
 import java.io.IOException;
-
+/**
+ * Loads in and prints the contents of the superblock
+ * @author Ben Freke;
+ *
+ *
+ */
 public class SuperBlock extends Ext2File {
-
+ 
+	/**
+	 * Takes in the block offset and prints the Magic Number, Inodes in the System, Blocks in the System, Blocks in the Group, Inodes in the Group and the Size of Each Inode.
+	 * @param blockOffset
+	 */
+	
 	public SuperBlock(int blockOffset){
 		super();
 		try {

@@ -6,7 +6,6 @@ import java.nio.file.FileSystems;
 public class Driver{
 	public static void main(String[] args){
 		
-		Volume  vol = new Volume("src/ext2fs");
 		SuperBlock superBlock = new SuperBlock(1);
 		GroupDescriptor groupDescriptor = new GroupDescriptor(2048);
 		InodeTable mainTable = new InodeTable(groupDescriptor.getTablePointer(), 2, 0);

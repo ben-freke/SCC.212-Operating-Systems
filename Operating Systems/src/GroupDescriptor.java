@@ -1,8 +1,18 @@
 import java.io.IOException;
-
+/**
+ * Loads in and prints out the contents of the Group Descriptor
+ * @author benfreke
+ *
+ */
 
 public class GroupDescriptor extends Ext2File {
+	
 	protected int inodeTablePointer = 0;
+	
+/**
+ * Takes in the byte reference to begin reading the Group Descriptor. 
+ * @param byteReference
+ */
 	public GroupDescriptor(int byteReference){
 		super();
 		try {
@@ -22,6 +32,11 @@ public class GroupDescriptor extends Ext2File {
 		this.fileClose();
 	}
 
+	/** 
+	 * Returns the pointer to the Inode Table in the file system
+	 * @return inodeTablePointer
+	 */
+	
 	public int getTablePointer(){
 		return inodeTablePointer;
 	}
